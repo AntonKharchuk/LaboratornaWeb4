@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Laboratorna4 task1</title>
+</head>
+<body>
+	
+</body>
+<script>
+let len
+let arr
+len = prompt("Введіть довжину масива: ");
+arr = new Array(+len);
+
+
+for(let i = 0; i<arr.length; i++){
+	arr[i] = Math.round(Math.random()*100)
+}
+
+let minParn = arr[0]
+let maxParn = arr[0]
+let minNeParn = arr[0]
+let maxNeParn = arr[0]
+
+for(let i = 1; i<arr.length; i++){
+	if(arr[i]<minParn&i%2)minParn = arr[i]
+	else if(arr[i]<minNeParn)minNeParn = arr[i]
+	if(arr[i]>maxParn&i%2)maxParn = arr[i]
+	else if(arr[i]>maxNeParn)maxNeParn = arr[i]
+}
+
+
+alert(`Маємо масив: ${arr} \n 
+Найменший елемент із парних: ${minParn} \n 
+Найбільший елемент із парних: ${maxParn} \n 
+Найменший елемент із не парних: ${minNeParn} \n 
+Найбільший елемент із не парних: ${maxNeParn} 
+`);
+choiseSort(arr);
+
+function choiseSort(yourArr){
+
+	let help = new Array(yourArr.length);
+	for(let i = 0; i<help.length; i++){
+		help[i] = yourArr[i];
+	}
+	let res = new Array(yourArr.length);
+	for(let i = 0; i<res.length; i++){
+	let max = Math.max(...help) 
+	res[i]= max
+	for(let i = 0; i<help.length; i++){
+		if(help[i]==max){
+			help[i]=-1;
+			break;
+		}
+	}
+	}
+
+	alert(`Відсортований масив: ${res}`);
+}
+
+</script>
+
+</html>

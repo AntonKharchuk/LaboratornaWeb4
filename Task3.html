@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Завдання 3</title>
+
+	<style>
+
+div{
+			border: 2px solid darkslategray;
+		text-align: center;
+
+		
+}
+
+	.header {
+		height: 100px;
+		width: 100%;
+		text-align: center;
+		background: darkseagreen;
+}
+.mainMenue {
+	width: 90%;
+	height: 30px;
+	margin: auto;
+}
+.mainMenue td{
+
+	text-align: center;
+}
+
+.footer {
+	height: 100px;
+		width: 100%;
+		background: darkseagreen;
+		text-align: left;
+}
+.whit{
+	
+	margin: auto;
+	background: white;
+}
+table{
+	width: 100%;
+	background-color: rgb(197, 241, 126);
+	
+}
+table, th, td, tr {
+  border: 1px solid rgb(127, 23, 23);
+}
+.search-input{
+	height: 40px;
+	width: 95%;
+	margin-top: 10px;
+	font-size: 24;
+}
+
+.centre {
+	background-color: khaki;
+	height: auto;
+	width: 100%;
+}
+
+.film-elements {
+	flex: auto;
+	margin: 0 5px;
+	height: 200px;
+}
+.film-rows {
+		display: flex;
+}
+
+	</style>
+</head>
+<body>
+	<div class="header">
+		<div class="whit">
+			<table class="topline">
+			<tr>
+			<th>Головна сторінка</th>
+			<th>Фільми</th>
+			<th>Актори</th>
+			<th>Жанри</th>
+			<th>Улюблене</th>
+			<th>Про нас</th>
+			</tr>
+	
+		</table>
+		</div>
+
+			<form action="">
+				<input class="search-input"  type="text" id="fseatch" name="fseatch">
+				<img src="images/pngwing.com.png" class="lupa" height="30px" width="30px" alt="">
+			</form>
+
+	</div>
+	<div class="centre" id="cent">
+	
+	</div>
+	
+	<div class="footer">
+		<ul>
+				<li><a href="">про нас</a></li>
+				<li><a href="">допоміжні сайти</a></li>
+				<li><a href="">допомогти зсу</a></li>
+
+			</ul>
+	</div>
+</body>
+<script>
+   var centreFeild = document.getElementById("cent");
+   
+
+let input = prompt("Введіть назви фільмів через кому ");
+let films = input.split(',');
+if(films.length%4==0){
+	for (let j = 0; j < films.length; j+=4) {
+		var tag = document.createElement("div");
+   		tag.style.display = "flex";
+		for (let i = 0; i < 4; i++) {
+   		var film = document.createElement("div");
+		film.style.flex = "auto";
+		film.style.margin = "5";
+		film.style.height = "400px";
+		var text = document.createTextNode(films[j+i]);
+   		film.appendChild(text);
+   		tag.appendChild(film);
+	}
+	centreFeild.appendChild(tag);
+}
+}
+else if(films.length%3==0){
+for (let j = 0; j < films.length; j+=3) {
+		var tag = document.createElement("div");
+   		tag.style.display = "flex";
+		for (let i = 0; i < 3; i++) {
+   		var film = document.createElement("div");
+		film.style.flex = "auto";
+		film.style.margin = "5";
+		film.style.height = "600px";
+		var text = document.createTextNode(films[j+i]);
+   		film.appendChild(text);
+   		tag.appendChild(film);
+	}
+	centreFeild.appendChild(tag);
+}
+}
+else if(films.length%2==0){
+for (let j = 0; j < films.length; j+=2) {
+		var tag = document.createElement("div");
+   		tag.style.display = "flex";
+		for (let i = 0; i < 2; i++) {
+   		var film = document.createElement("div");
+		film.style.flex = "auto";
+		film.style.margin = "5";
+		film.style.height = "800px";
+		var text = document.createTextNode(films[j+i]);
+   		film.appendChild(text);
+   		tag.appendChild(film);
+	}
+	centreFeild.appendChild(tag);
+}
+}
+else{
+for (let j = 0; j < films.length; j+=4) {
+		var tag = document.createElement("div");
+   		tag.style.display = "flex";
+		for (let i = 0; i < 4; i++) {
+   		var film = document.createElement("div");
+		film.style.flex = "auto";
+		film.style.margin = "5";
+		film.style.height = "400px";
+		if(films[j+i]!= null){
+		var text = document.createTextNode(films[j+i]);
+   		film.appendChild(text);	
+		}
+   		tag.appendChild(film);
+	}
+	centreFeild.appendChild(tag);
+}
+}
+
+</script>
+</html>

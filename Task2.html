@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Laboratorna4 task2</title>
+	<style>
+		@keyframes example {
+  0%   {background-image: url(images/img1.jpg);
+		background-repeat: no-repeat;
+  background-size: cover;}
+  25%  {background-image: url(images/img2.jpg);
+  	background-repeat: no-repeat;
+  background-size: cover;}
+  50% {background-image: url(images/img3.jpg);
+		background-repeat: no-repeat;
+  background-size: cover;}
+  75% {background-image: url(images/img4.jpg);
+		background-repeat: no-repeat;
+  background-size: cover;}
+   100% {background-image: url(images/img5.jpg);
+	background-repeat: no-repeat;
+  background-size: cover;}
+}
+#slides{
+	  background-image: url(images/img5.jpg);
+	  background-repeat: no-repeat;
+  background-size: cover;
+}
+#slides:hover{
+  animation-name: example;
+  animation-duration:8s;
+}
+	</style> 
+</head>
+<body>
+	height
+	<select id="height-selector" name="height-selector"> 
+  <option value="200px">200px</option>
+  <option value="400px" selected>400px</option>
+  <option value="600px">600px</option>
+</select>
+width
+<select id="width-selector" name="width-selector">
+<option value="200px">200px</option>
+  <option value="400px" selected>400px</option>
+  <option value="600px">600px</option>
+</select>
+time
+<select id="time-selector" name="time-selector">
+ <option value="5s">1 second</option>
+  <option value="7.5s" selected>1.5 seconds</option>
+  <option value="10s">2 seconds</option>
+</select>
+<br>
+<br>
+	<div id="slides">	
+		
+	</div>
+	
+</body>
+<script>
+
+	let slideShow = document.getElementById("slides");
+	slideShow.style.height = "400px";
+	slideShow.style.width = "400px";
+
+const height = document.getElementById("height-selector");
+height.addEventListener('change', (event) => {
+  	slideShow.style.height = event.target.value;
+});
+const width = document.getElementById("width-selector");
+width.addEventListener('change', (event) => {
+  	slideShow.style.width = event.target.value;
+});
+const time = document.getElementById("time-selector");
+time.addEventListener('change', (event) => {
+  	slideShow.style.animationDuration = event.target.value;
+});
+
+
+</script>
+</html>
